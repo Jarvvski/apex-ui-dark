@@ -1,0 +1,115 @@
+
+// Lists
+// -------------------
+
+// Used in different places, like the Tree View, Commmand Palette etc.
+// Overrides: atom/static/lists.less
+
+// List Group -------------------
+.list-group {
+  li {
+    padding-left: @component-padding/2;
+    border-bottom: 1px dotted @base-border-color;
+    color: @text-color-dim;
+    .transition;
+
+    // We want to highlight the background of the list items because we dont know their size.
+    &.selected {
+      color: @text-color-selected;
+      z-index: 15;
+      &:before{ display: none; }
+    }
+  }
+}
+
+
+// List Tree -------------------
+.list-tree {
+  .selected {
+    color: @text-color-selected;
+  }
+}
+
+
+// Select List -------------------
+.select-list {
+  li {
+    padding: @component-padding * .75 @component-padding;
+  }
+  .status {
+    float: right;
+  }
+}
+
+.select-list {
+  .character-match {
+    font-weight: normal !important;
+    border-bottom: 1px solid @oc-blue-3;
+    color: inherit;
+  }
+}
+
+// Popover List -------------------
+// Used as a popover for something like autocomplete.
+autocomplete-suggestion-list.select-list.popover-list {
+  @popover-list-padding: @component-padding/2;
+
+  padding: @popover-list-padding;
+  border-radius: @component-border-radius;
+  background-color: @overlay-background-color;
+  .medium-shadow;
+
+  .suggestion-description {
+    background: transparent;
+    font-size: .9rem;
+  }
+
+  .suggestion-description-content {
+    font-size: .9rem;
+  }
+
+  ol.list-group {
+    li {
+      line-height: 2em;
+    }
+  }
+
+
+  .selected {
+    background: @oc-gray-9;
+    .icon {
+      color: @oc-blue-3;
+    }
+  }
+}
+s
+.select-list .selected .secondary-line {
+  color: @text-color-subtle;
+}
+
+.list-group li:not(.list-nested-item) {
+  line-height: 1.8;
+}
+
+autocomplete-suggestion-list {
+  .suggestion-list-scroller {
+    background: @oc-gray-9;
+  }
+
+  .left-label {
+    color: @oc-gray-2;
+  }
+
+
+  .word-container {
+    color: @oc-gray-3;
+  }
+
+  .icon-container {
+    // display: none !important;
+    .icon {
+      background: @oc-gray-9 !important;
+      color: @oc-gray-4;
+    }
+  }
+}
