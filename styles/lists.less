@@ -11,7 +11,6 @@
     padding-left: @component-padding/2;
     border-bottom: 1px dotted @base-border-color;
     color: @text-color-dim;
-    .transition;
 
     // We want to highlight the background of the list items because we dont know their size.
     &.selected {
@@ -76,13 +75,45 @@ autocomplete-suggestion-list.select-list.popover-list {
 
 
   .selected {
-    background: @oc-gray-9;
+    background: @oc-gray-3;
     .icon {
       color: @oc-blue-3;
     }
   }
 }
-s
+
+.select-list.command-palette {
+	@popover-list-padding: @component-padding/2;
+
+	padding: @popover-list-padding;
+	border-radius: @component-border-radius;
+	background: rgba(23, 24, 24, .90);
+	.medium-shadow;
+
+	.suggestion-description {
+		background: transparent;
+		font-size: .9rem;
+	}
+
+	.suggestion-description-content {
+		font-size: .9rem;
+	}
+
+	ol.list-group {
+		li {
+			line-height: 2em;
+		}
+	}
+
+
+	.selected {
+		color: @oc-blue-3;
+		.icon {
+			color: @oc-blue-3;
+		}
+	}
+}
+
 .select-list .selected .secondary-line {
   color: @text-color-subtle;
 }
@@ -113,3 +144,41 @@ autocomplete-suggestion-list {
     }
   }
 }
+
+// .generate-list-item-text-color(@class) {
+//     li:not(.list-nested-item).text-@{class},
+//     li.list-nested-item.text-@{class} > .list-item {
+//
+//     }
+// }
+//
+// .generate-list-item-status-color(@color, @status) {
+//     li:not(.list-nested-item).status-@{status},
+//     li.list-nested-item.status-@{status} > .list-item {
+//         color: @color;
+//     }
+//
+//     li:not(.list-nested-item).selected.status-@{status},
+//     li.list-nested-item.selected.status-@{status} > .list-item {
+//         color: @color;
+//     }
+// }
+//
+// .list-group, .list-tree {
+//     li:not(.list-nested-item),
+//     li.list-nested-item > .list-item {
+//
+//     }
+//
+//     .generate-list-item-text-color(subtle);
+//     .generate-list-item-text-color(info);
+//     .generate-list-item-text-color(success);
+//     .generate-list-item-text-color(warning);
+//     .generate-list-item-text-color(error);
+//     .generate-list-item-text-color(selected);
+//     .generate-list-item-status-color(@oc-gray-7, ignored);
+//     .generate-list-item-status-color(@oc-green-3, added);
+//     .generate-list-item-status-color(@oc-blue-3, renamed);
+//     .generate-list-item-status-color(@oc-yellow-3, modified);
+//     .generate-list-item-status-color(@oc-red-3, removed);
+// }

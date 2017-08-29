@@ -35,6 +35,34 @@ atom-panel.modal {
 
 atom-panel.modal > .select-list {
   min-width: 500px;
+
+  	.selected {
+  		color: @oc-blue-3;
+		background: @oc-gray-7;
+  		.icon {
+  			color: @oc-blue-3;
+  		}
+  	}
+
+}
+
+atom-panel.modal > .advanced-open-file {
+	display: flex;
+	position: relative;
+	min-width: 500px;
+	margin-top: 17%;
+	height: 45%;
+
+	 .list-group {
+		.list-item {
+			padding: 5px 0 5px 0;
+		}
+
+		.selected {
+			color: @oc-blue-3;
+			background: @oc-gray-7;
+		}
+	}
 }
 
 .inset-panel {
